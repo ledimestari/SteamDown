@@ -4,7 +4,8 @@ A modern, Python-based desktop utility for Steam users.
 
 ---
 
-This forks purpose is to change the default actions so that the defaults are to enable the selected action and to set shutdown pc as a default action.
+> [!NOTE]  
+> This forks purpose is to change the default actions so that the defaults are to enable the selected action and to set shutdown pc as a default action.
 
 ---
 
