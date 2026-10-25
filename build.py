@@ -201,7 +201,8 @@ def build(force=False):
         "--name", "SteamDown",
         "main.py",
         "--add-data", f"{theme_file}{os.pathsep}steamdown/themes",
-        "--add-data", f"{pyside_plugins}{os.pathsep}PySide6/plugins"
+        "--add-data", f"{pyside_plugins}{os.pathsep}PySide6/plugins",
+        "--add-data", f"assets{os.pathsep}assets"
     ]
 
     # Add verbosity flags for PyInstaller
