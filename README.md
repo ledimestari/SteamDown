@@ -4,6 +4,10 @@ A modern, Python-based desktop utility for Steam users.
 
 ---
 
+This forks purpose is to change the default actions so that the defaults are to enable the selected action and to set shutdown pc as a default action.
+
+---
+
 ## What is SteamDown?
 
 SteamDown is a utility that monitors Steam download activity. If there is no download activity for a user-defined amount of time, SteamDown will automatically perform your chosen action—such as stopping Steam, shutting down your PC, putting your PC to sleep, and more. This helps automate your system's behavior after downloads finish, saving power and time.
