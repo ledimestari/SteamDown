@@ -159,8 +159,8 @@ class MainWindow(QWidget):
         # Action selection
         self.action_combo = QComboBox()
         self.action_combo.setObjectName("ActionCombo")
-        self.action_combo.addItems(["Close Steam", "Shutdown PC", "Sleep PC", "Hibernate PC", "Log off"])
-        self.action_combo.setCurrentText("Close Steam")
+        self.action_combo.addItems(["Shutdown PC", "Close Steam", "Sleep PC", "Hibernate PC", "Log off"])
+        self.action_combo.setCurrentText("Shutdown PC")
         controls_layout.addWidget(self.action_combo)
         
         # Enable checkbox
@@ -169,8 +169,10 @@ class MainWindow(QWidget):
         
         self.enable_check = QCheckBox("Enable SteamDown")
         self.enable_check.setObjectName("EnableCheck")
+        self.enable_check.setChecked(True)  # enabled by default
         self.enable_check.stateChanged.connect(self.on_toggle_changed)
         enable_layout.addWidget(self.enable_check)
+        self.enabled = True
         
         controls_layout.addLayout(enable_layout)
         
