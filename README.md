@@ -3,10 +3,31 @@
 A modern, Python-based desktop utility for Steam users.
 
 ---
+---
 
 > [!NOTE]  
 > This forks purpose is to change the default actions so that the defaults are to enable the selected action and to set shutdown pc as a default action.
 
+
+#### Features and defaults
+- "Enable SteamDown" checkbox is now on by default
+- "Shutdown PC" is now the default action in the dropdown
+- Added a custom app icon (`assets/icon.ico`), used for the exe file and the window/taskbar icon
+
+#### Build changes (`build.py`)
+- Added `--icon assets/icon.ico` so the exe gets the custom icon
+- Added `--add-data assets:assets` so the title bar icon and other assets are bundled in the exe
+- Fixed the PyInstaller verbosity flags to use `--log-level` (the old `-v` only printed the version)
+- Fixed the PySide6 plugins path on Linux using `glob`
+
+#### Bug fixes
+- Fixed the "Close Steam" mismatch in `perform_action` (the check now matches the dropdown label)
+
+#### Setup notes
+- The Windows build needs Python 3.11 because of the pinned PySide6 and PyInstaller versions
+- Build from a normal Windows folder, not the `\\wsl$\...` path
+
+---
 ---
 
 ## What is SteamDown?
@@ -158,7 +179,6 @@ Ideas for new features—especially for supporting other game launchers (e.g., E
 
 ### 🐞 Bugfixes
 - Title bar issues fixed
-- App icon to be added
 
 ### 🔜 Upcoming
 - Light/system theme mode
