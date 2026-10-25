@@ -12,6 +12,7 @@ from ..themes.theme_manager import ThemeManager
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
+        self.setWindowIcon(QIcon(resource_path("assets/icon.ico")))
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setMinimumSize(400, 500)
         self.dragging = False

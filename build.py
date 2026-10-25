@@ -7,6 +7,7 @@ import json
 import argparse
 import threading
 import itertools
+import glob
 from pathlib import Path
 
 # ANSI color codes for Windows
@@ -156,7 +157,8 @@ def get_pyside_plugins_path():
     """Get PySide6 plugins path from virtual environment"""
     if sys.platform == "win32":
         return os.path.join("venv", "Lib", "site-packages", "PySide6", "plugins")
-    return os.path.join("venv", "lib", "python3.*", "site-packages", "PySide6", "plugins")
+    matches = glob.glob(os.path.join("venv", "lib", "python3.*", "site-packages", "PySide6", "plugins"))
+    return matches[0] if matches else None
 
 def build(force=False):
     """Build the application using PyInstaller"""
@@ -199,6 +201,7 @@ def build(force=False):
         "--onefile",
         "--windowed",
         "--name", "SteamDown",
+        "--icon", os.path.join("assets", "icon.ico"),
         "main.py",
         "--add-data", f"{theme_file}{os.pathsep}steamdown/themes",
         "--add-data", f"{pyside_plugins}{os.pathsep}PySide6/plugins",
